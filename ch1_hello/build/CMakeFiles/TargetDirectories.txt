@@ -1,0 +1,3 @@
+D:/CMakeLearn/build/CMakeFiles/Hello.dir
+D:/CMakeLearn/build/CMakeFiles/edit_cache.dir
+D:/CMakeLearn/build/CMakeFiles/rebuild_cache.dir

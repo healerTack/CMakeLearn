@@ -1,0 +1,23 @@
+cmake使用MinGW进行编译：cmake -B build -G "MinGW Makefiles"
+生成二进制可执行文件：cmake --build build
+
+利用 cmake -P *.cmake来执行.cmake文件进而学习cmake(第二章开始)
+Cmake Language 的执行从根文件开始
+！！cmake语法：
+1. message
+
+2. 变量:
+    (1)CMake提供
+    (2)自定义：
+        set(<variable> <value>...[PARENT_SCOPE])
+        !!! 一个变量可以设置多个值，存储时用";"分割，但是显示时只进行连接处理
+
+        list(APPEND <list> [<element>...]) 列表添加元素
+        list(REMOVE_ITEM <list> <value>[value...]) 列表删除元素
+        list(LENGTH <list> <output variable>) 获取列表元素个数
+        list(FIND <list> <value> <out-var>) 在列表中查找元素返回索引
+        list(INSERT <list> <index> [<element>...]) 在index位置插入
+        list(REVERSE <list>) 反转list
+        list(SORT <list>[...]) 排序list
+        
+

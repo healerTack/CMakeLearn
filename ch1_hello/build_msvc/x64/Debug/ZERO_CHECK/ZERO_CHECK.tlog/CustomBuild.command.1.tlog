@@ -1,0 +1,10 @@
+^D:\CMAKELEARN\BUILD\CMAKEFILES\C424C9905D8E406127D6DD489585E687\GENERATE.STAMP.RULE
+setlocal
+D:\cmake\bin\cmake.exe -SD:/CMakeLearn -BD:/CMakeLearn/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/CMakeLearn/build/Hello.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
