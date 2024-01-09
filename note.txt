@@ -6,18 +6,30 @@ Cmake Language 的执行从根文件开始
 ！！cmake语法：
 1. message
 
-2. 变量:
+2. 变量:(变量名含有空格时，使用\ 反义) list&set
     (1)CMake提供
     (2)自定义：
         set(<variable> <value>...[PARENT_SCOPE])
         !!! 一个变量可以设置多个值，存储时用";"分割，但是显示时只进行连接处理
+        unset(<variable>): 用来取消定义
 
-        list(APPEND <list> [<element>...]) 列表添加元素
-        list(REMOVE_ITEM <list> <value>[value...]) 列表删除元素
-        list(LENGTH <list> <output variable>) 获取列表元素个数
-        list(FIND <list> <value> <out-var>) 在列表中查找元素返回索引
-        list(INSERT <list> <index> [<element>...]) 在index位置插入
-        list(REVERSE <list>) 反转list
-        list(SORT <list>[...]) 排序list
+        .list(APPEND <list> [<element>...]) 列表添加元素
+            在list列表中加入元素element
+
+        .list(REMOVE_ITEM <list> <value>[value...]) 列表删除元素
+            在list列表中删除元素value
+
+        .list(LENGTH <list> <output variable>) 获取列表元素个数
+            获取list的长度存储到out-var中
+
+        .list(FIND <list> <value> <out-var>) 在列表中查找元素返回索引
+            查找list列表中元素value是否存在，返回索引存储到out-var中
+
+        .list(INSERT <list> <index> [<element>...]) 在index位置插入
+            在list列表的index位置插入元素element
+
+        .list(REVERSE <list>) 反转list
+        
+        .list(SORT <list>[...]) 排序list
         
 
