@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.20.0)
+
+function(MyFunc FirstArg)
+    message("MyFunc Name: ${CMAKE_CURRENT_FUNCTION}")
+    message("Argument: ${FirstArg}")
+    set("FirstArg" "New value")
+    message("Argument: ${FirstArg}")
+    message("ARGV0 = ${ARGV0}")
+    message("ARGV1 = ${ARGV1}")
+    message("ARGV2 = ${ARGV2}")
+endfunction()
+
+set("FirstArg" "first value")
+MyFunc(${FirstArg} "value")
+message("FirstArg ${FirstArg}")

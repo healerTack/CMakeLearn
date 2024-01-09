@@ -31,5 +31,33 @@ Cmake Language 的执行从根文件开始
         .list(REVERSE <list>) 反转list
         
         .list(SORT <list>[...]) 排序list
-        
 
+3. 条件控制： 取反NOT  小于LESS  等于EQUAL  
+    (1) if（判断）  一定要结尾配对endif()  数字和字符串比大小（都是按照字符串存储）
+    (2) for循环   一定要结尾配对endforeach()
+        .foreach(<loop_var> RANGE <max>)
+         <commands>
+         endforeach()
+
+        .foreach(<loop_var> RANGE <min> <max>[<step>]) 从min到max按照step步幅循环
+         <commands>
+         endforeach()
+
+        .foreach(<loop_var> IN [LISTS <lists>][ITEMS <items>]) 键值对以列表元素为循环
+         <commands>
+         endforeach() 
+
+4. 函数：function定义
+    function(<name>[<argument>...])
+    <commands>
+    endfunction()
+
+5. 作用域： scope
+    (1)Function scope函数作用域
+    (2)Directory scope 当从add_subdirectory()命令执行嵌套目录中的CMakeLists.txt列表文件时，
+    注意父CMakeLists.txt其中的变量可以被子CMakeLists.txt使用
+        
+6. 宏：macro定义 ！！！！只要能读懂就行  (相当于代码全部复制到调用宏的位置)
+    macro(<name> [<argument>...])
+    <commands>
+    endmacro()
