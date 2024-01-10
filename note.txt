@@ -61,3 +61,23 @@ Cmake Language 的执行从根文件开始
     macro(<name> [<argument>...])
     <commands>
     endmacro()
+
+
+----------------------------------------------------------------
+
+项目构建：
+    1. 最基础：在add_executable()中添加所有.cpp文件
+
+    2. 调用子目录中的cmake脚本：
+        在.cmake脚本中设置变量，管理文件
+    
+    3. CMakeLists嵌套使用：
+        (1) 常用命令：
+            target_include_directories  头文件目录的声明
+            target_link_libraries  连接库文件
+            add_subdirectory  添加子目录
+            add_library  生成库文件（默认STATIC library）
+
+        (2) 一般步骤：
+            在头文件目录中创建库文件
+            之后连接库文件并声明头文件目录
