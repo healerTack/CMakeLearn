@@ -79,5 +79,21 @@ Cmake Language 的执行从根文件开始
             add_library  生成库文件（默认STATIC library）
 
         (2) 一般步骤：
-            在头文件目录中创建库文件
+            在头文件目录中创建库文件add_library()
             之后连接库文件并声明头文件目录
+                add_subdirectory()
+                target_link_libraries()
+                target_include_directories()
+    
+    4. Object Libraries
+        (1) 命令：add_library OBJECT
+            一个特殊的库类型，将目标文件编译成一个库，但不会生成最终的连接文件。
+            可以在后续的add_library()或add_executable()命令中，将Object Library作为源文件进行链接，
+            从而生成最终的可执行文件或库文件
+        
+        (2) 一般步骤：
+            创建库文件add_library()时选取OBJECT参数
+            在该文件中调用target_include_directories()
+            之后连接库文件并声明头文件目录
+                add_subdirectory()
+                target_link_libraries()
