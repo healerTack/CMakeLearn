@@ -4,9 +4,9 @@ cmake使用MinGW进行编译：cmake -B build -G "MinGW Makefiles"
 利用 cmake -P *.cmake来执行.cmake文件进而学习cmake(第二章开始)
 Cmake Language 的执行从根文件开始
 ！！cmake语法：
-1. message
+一. message
 
-2. 变量:(变量名含有空格时，使用\ 反义) list&set
+二. 变量:(变量名含有空格时，使用\ 反义) list&set
     (1)CMake提供
     (2)自定义：
         set(<variable> <value>...[PARENT_SCOPE])
@@ -32,7 +32,7 @@ Cmake Language 的执行从根文件开始
         
         .list(SORT <list>[...]) 排序list
 
-3. 条件控制： 取反NOT  小于LESS  等于EQUAL  
+三. 条件控制： 取反NOT  小于LESS  等于EQUAL  
     (1) if（判断）  一定要结尾配对endif()  数字和字符串比大小（都是按照字符串存储）
     (2) for循环   一定要结尾配对endforeach()
         .foreach(<loop_var> RANGE <max>)
@@ -65,7 +65,7 @@ Cmake Language 的执行从根文件开始
 
 ----------------------------------------------------------------
 
-项目构建：
+四.项目构建：
     1. 最基础：在add_executable()中添加所有.cpp文件
 
     2. 调用子目录中的cmake脚本：
@@ -97,3 +97,30 @@ Cmake Language 的执行从根文件开始
             之后连接库文件并声明头文件目录
                 add_subdirectory()
                 target_link_libraries()
+
+五. cmake与库
+    静态库：
+        在连接阶段，会将汇编生成的目标文件.o与引用到的库一起连接打包到可执行文件中。
+    ！！对函数库的连接在编译时完成！！
+
+    动态库：    
+        运行时载入，解决静态库的空间浪费
+
+    常用命令：
+        file(GLOB SRC *.cpp)常用于搜索源文件
+        add_library(STATIC/SHARED)  静态/动态
+        ${LIBRARY_OUTPUT_PATH}导出目录(将生成的库生成到什么地方)
+
+    静态库调用流程：
+        引入头文件
+        连接静态库
+        生成可执行二进制文件
+    
+    动态库调用流程：windows调用动态库需要将可执行文件与动态库放在同一目录下 利用set(EXECUTABLE_OUTPUT_PATH )设置
+        引入头文件
+        声明库目录
+        生成可执行二进制文件
+        连接动态库
+
+六. cmake与源文件交互
+    
