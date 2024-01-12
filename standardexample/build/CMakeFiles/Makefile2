@@ -161,8 +161,8 @@ CMakeFiles/app_static.dir/clean:
 # Target rules for target CMakeFiles/app_shared.dir
 
 # All Build rule for target.
-CMakeFiles/app_shared.dir/all: CMakeFiles/animalShared.dir/all
 CMakeFiles/app_shared.dir/all: CMakeFiles/animalStatic.dir/all
+CMakeFiles/app_shared.dir/all: CMakeFiles/animalShared.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_shared.dir\build.make CMakeFiles/app_shared.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_shared.dir\build.make CMakeFiles/app_shared.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\CMakeLearn\standardexample\build\CMakeFiles --progress-num=7,8 "Built target app_shared"

@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/app_static.dir/main.cpp.obj"
   "CMakeFiles/app_static.dir/main.cpp.obj.d"
-  "D:/CMakeLearn/standardexample/outFile/app_static.exe"
-  "D:/CMakeLearn/standardexample/outFile/app_static.exe.manifest"
-  "D:/CMakeLearn/standardexample/outFile/app_static.pdb"
-  "D:/CMakeLearn/standardexample/outFile/libapp_static.dll.a"
+  "D:/CMakeLearn/standardexample/app_static.exe"
+  "D:/CMakeLearn/standardexample/app_static.exe.manifest"
+  "D:/CMakeLearn/standardexample/app_static.pdb"
+  "D:/CMakeLearn/standardexample/libapp_static.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
